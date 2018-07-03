@@ -23,12 +23,6 @@ addDecorator(withBackgrounds([
   { name: 'facebook', value: '#3b5998' },
 ]));
 
-addDecorator(story => (
-  <div style={{ marginRight: 95, marginLeft: 10, marginTop: 10 }}>
-    {story()}
-  </div>
-));
-
 addDecorator(withInfo({
   source: false,
 }));

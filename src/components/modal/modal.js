@@ -63,10 +63,10 @@ export default class Modal extends PureComponent {
   }
 
   getDocument = () => {
-    const { document } = this.props;
-    if (document) {
-      return document;
+    if (this.props.document) {
+      return this.props.document;
     }
+
     if (typeof document !== 'undefined') {
       return document;
     }
