@@ -11,6 +11,10 @@ import Icon from '../icon';
 const colors = [null].concat(Object.keys(CONSTANTS.COLORS).map(key => CONSTANTS.COLORS[key]));
 
 export default class Dropdown extends PureComponent {
+  static Item = DropdownItem;
+
+  static Divider = DropdownDivider;
+
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.shape({}),
@@ -32,9 +36,6 @@ export default class Dropdown extends PureComponent {
     align: null,
     hoverable: false,
   }
-
-  static Item = DropdownItem;
-  static Divider = DropdownDivider;
 
   constructor(props) {
     super(props);
@@ -79,7 +80,7 @@ export default class Dropdown extends PureComponent {
     if (evt) {
       evt.preventDefault();
     }
-    this.setState({ open: !this.state.open });
+    this.setState(({ open }) => ({ open: !open }));
   }
 
   select = value => () => {
@@ -124,7 +125,9 @@ export default class Dropdown extends PureComponent {
       >
         <div className="dropdown-trigger" role="presentation" onClick={this.toggle}>
           <Button color={color}>
-            <span>{current}</span>
+            <span>
+              {current}
+            </span>
             <Icon icon="angle-down" size="small" />
           </Button>
         </div>

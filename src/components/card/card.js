@@ -8,6 +8,14 @@ import CardHeader from './components/header';
 import CardFooter from './components/footer';
 
 export default class Card extends PureComponent {
+  static Image = CardImage
+
+  static Content = CardContent
+
+  static Header = CardHeader
+
+  static Footer = CardFooter
+
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
@@ -26,11 +34,6 @@ export default class Card extends PureComponent {
     type: null,
     renderAs: 'div',
   }
-
-  static Image = CardImage
-  static Content = CardContent
-  static Header = CardHeader
-  static Footer = CardFooter
 
   render() {
     const {
@@ -61,4 +64,3 @@ export default class Card extends PureComponent {
     );
   }
 }
-

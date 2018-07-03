@@ -8,6 +8,7 @@ const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 export default class Column extends PureComponent {
   static displayName = 'Columns.Column'
+
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -185,25 +186,25 @@ export default class Column extends PureComponent {
       <div
         {...props}
         className={classNames(className, 'column', {
-        [`is-${size}`]: size,
-        [`is-${mobile.size || mobileSize}-mobile`]: mobile.size || mobileSize,
-        [`is-${tablet.size || tabletSize}-tablet`]: tablet.size || tabletSize,
-        [`is-${desktop.size || desktopSize}-desktop`]: desktop.size || desktopSize,
-        [`is-${widescreen.size || widescreenSize}-widescreen`]: widescreen.size || widescreenSize,
-        [`is-${fullhd.size || fullhdSize}-fullhd`]: fullhd.size || fullhdSize,
-        [`is-offset-${mobile.offset || mobileOffset}-mobile`]: mobile.offset || mobileOffset,
-        [`is-offset-${tablet.offset || tabletOffset}-tablet`]: tablet.offset || tabletOffset,
-        [`is-offset-${desktop.offset || desktopOffset}-desktop`]: desktop.offset || desktopOffset,
-        [`is-offset-${widescreen.offset || widescreenOffset}-widescreen`]: widescreen.offset || widescreenOffset,
-        [`is-offset-${fullhd.offset || fullhdOffset}-fullhd`]: fullhd.offset || fullhdOffset,
-        [`is-offset-${offset}`]: offset,
-        'is-narrow': narrow,
-        'is-narrow-mobile': mobile.narrow,
-        'is-narrow-tablet': tablet.narrow,
-        'is-narrow-desktop': desktop.narrow,
-        'is-narrow-widescreen': widescreen.narrow,
-        'is-narrow-fullhd': fullhd.narrow,
-      })}
+          [`is-${size}`]: size,
+          [`is-${mobile.size || mobileSize}-mobile`]: mobile.size || mobileSize,
+          [`is-${tablet.size || tabletSize}-tablet`]: tablet.size || tabletSize,
+          [`is-${desktop.size || desktopSize}-desktop`]: desktop.size || desktopSize,
+          [`is-${widescreen.size || widescreenSize}-widescreen`]: widescreen.size || widescreenSize,
+          [`is-${fullhd.size || fullhdSize}-fullhd`]: fullhd.size || fullhdSize,
+          [`is-offset-${mobile.offset || mobileOffset}-mobile`]: mobile.offset || mobileOffset,
+          [`is-offset-${tablet.offset || tabletOffset}-tablet`]: tablet.offset || tabletOffset,
+          [`is-offset-${desktop.offset || desktopOffset}-desktop`]: desktop.offset || desktopOffset,
+          [`is-offset-${widescreen.offset || widescreenOffset}-widescreen`]: widescreen.offset || widescreenOffset,
+          [`is-offset-${fullhd.offset || fullhdOffset}-fullhd`]: fullhd.offset || fullhdOffset,
+          [`is-offset-${offset}`]: offset,
+          'is-narrow': narrow,
+          'is-narrow-mobile': mobile.narrow,
+          'is-narrow-tablet': tablet.narrow,
+          'is-narrow-desktop': desktop.narrow,
+          'is-narrow-widescreen': widescreen.narrow,
+          'is-narrow-fullhd': fullhd.narrow,
+        })}
       >
         {children}
       </div>

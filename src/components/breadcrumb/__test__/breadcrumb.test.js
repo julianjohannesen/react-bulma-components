@@ -6,7 +6,11 @@ import Breadcrumb from '..';
 const Anchor = ({
   children,
   ...props
-}) => (<a className="Others" {...props} >{children}</a>);
+}) => (
+  <a className="Others" {...props}>
+    {children}
+  </a>
+);
 /* eslint-enable react/prop-types */
 
 describe('Breadcrumb component', () => {
@@ -21,20 +25,20 @@ describe('Breadcrumb component', () => {
   it('Should be a Breadcrumb', () => {
     const component = renderer.create(<Breadcrumb
       items={[
-          {
-            url: '/',
-            name: 'Home',
-          },
-          {
-            url: '/section',
-            name: 'Section',
-          },
-          {
-            url: '/detail',
-            name: 'Details',
-            active: true,
-          },
-        ]}
+        {
+          url: '/',
+          name: 'Home',
+        },
+        {
+          url: '/section',
+          name: 'Section',
+        },
+        {
+          url: '/detail',
+          name: 'Details',
+          active: true,
+        },
+      ]}
     />);
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -43,18 +47,18 @@ describe('Breadcrumb component', () => {
       const component = renderer.create(<Breadcrumb
         separator={separator}
         items={[
-            {
-              name: 'Storybook',
-              url: '#1',
-            }, {
-              name: 'Breadcrumb',
-              url: '#2',
-            }, {
-              name: 'Breadcrumb Types',
-              url: '#3',
-              active: true,
-            },
-          ]}
+          {
+            name: 'Storybook',
+            url: '#1',
+          }, {
+            name: 'Breadcrumb',
+            url: '#2',
+          }, {
+            name: 'Breadcrumb Types',
+            url: '#3',
+            active: true,
+          },
+        ]}
       />);
       expect(component.toJSON()).toMatchSnapshot();
     })
@@ -63,20 +67,20 @@ describe('Breadcrumb component', () => {
     const component = renderer.create(<Breadcrumb
       renderAs={Anchor}
       items={[
-          {
-            url: '/',
-            name: 'Home',
-          },
-          {
-            url: '/section',
-            name: 'Section',
-          },
-          {
-            url: '/detail',
-            name: 'Details',
-            active: true,
-          },
-        ]}
+        {
+          url: '/',
+          name: 'Home',
+        },
+        {
+          url: '/section',
+          name: 'Section',
+        },
+        {
+          url: '/detail',
+          name: 'Details',
+          active: true,
+        },
+      ]}
     />);
     expect(global.console.warn).toBeCalled();
     expect(component.toJSON()).toMatchSnapshot();
@@ -86,20 +90,20 @@ describe('Breadcrumb component', () => {
       style={{ marginTop: 10 }}
       size="large"
       items={[
-          {
-            url: '/',
-            name: 'Home',
-          },
-          {
-            url: '/section',
-            name: 'Section',
-          },
-          {
-            url: '/detail',
-            name: 'Details',
-            active: true,
-          },
-        ]}
+        {
+          url: '/',
+          name: 'Home',
+        },
+        {
+          url: '/section',
+          name: 'Section',
+        },
+        {
+          url: '/detail',
+          name: 'Details',
+          active: true,
+        },
+      ]}
     />);
     expect(component.toJSON()).toMatchSnapshot();
   });
