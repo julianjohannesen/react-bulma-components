@@ -23,7 +23,7 @@ export default class Modal extends PureComponent {
     closeOnEsc: PropTypes.bool,
     closeOnBlur: PropTypes.bool,
     showClose: PropTypes.bool,
-    children: PropTypes.element.isRequired,
+    children: PropTypes.node.isRequired,
     document: PropTypes.object,
     className: PropTypes.string,
   }
@@ -36,6 +36,8 @@ export default class Modal extends PureComponent {
     // Expose mount point for testing
     document: null,
   }
+
+  state = {};
 
   componentDidMount() {
     const { closeOnEsc } = this.props;
@@ -68,6 +70,7 @@ export default class Modal extends PureComponent {
     if (typeof document !== 'undefined') {
       return document;
     }
+
     return null;
   }
 

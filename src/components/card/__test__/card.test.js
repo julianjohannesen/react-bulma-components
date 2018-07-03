@@ -52,13 +52,4 @@ Content
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
-  it('Should print deprecation warning', () => {
-    // eslint-disable-next-line no-console
-    console.warn = jest.genMockFn();
-    const component = renderer.create(<Card type="image" size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />);
-    expect(component.toJSON()).toMatchSnapshot();
-    expect(global.console.warn).toBeCalled();
-    // eslint-disable-next-line no-console
-    console.warn.mockRestore();
-  });
 });

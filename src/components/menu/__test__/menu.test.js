@@ -58,7 +58,7 @@ Custom
       </span>
     );
 
-    Custom.propTypes = { children: PropTypes.element.isRequired };
+    Custom.propTypes = { children: PropTypes.node.isRequired };
 
     const component = renderer.create(
       <Menu>

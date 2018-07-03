@@ -37,11 +37,6 @@ export default class Dropdown extends PureComponent {
     hoverable: false,
   }
 
-  constructor(props) {
-    super(props);
-    this.checkProps(props);
-  }
-
   state = {
     open: false,
   }
@@ -50,19 +45,8 @@ export default class Dropdown extends PureComponent {
     document.addEventListener('click', this.close);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.checkProps({ ...this.props, ...nextProps });
-  }
-
   componentWillUnmount() {
     document.removeEventListener('click', this.close);
-  }
-
-  checkProps = (props) => {
-    if (props.value && !props.onChange) {
-      // eslint-disable-next-line no-console
-      console.error('Warning: This is a controlled component without onChange listener, please check the props of the Dropdown component');
-    }
   }
 
   close = (evt) => {

@@ -83,8 +83,6 @@ class Pagination extends React.PureComponent {
     }
 
     if (current > total) {
-      // eslint-disable-next-line no-console
-      console.warn('Pagination controller: Current page can not be greater than total');
       return null;
     }
 

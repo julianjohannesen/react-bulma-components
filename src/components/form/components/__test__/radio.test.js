@@ -3,14 +3,6 @@ import renderer from 'react-test-renderer';
 import Radio from '../radio';
 
 describe('Radio component', () => {
-  beforeEach(() => {
-    // eslint-disable-next-line no-console
-    console.error = jest.genMockFn();
-  });
-  afterAll(() => {
-    // eslint-disable-next-line no-console
-    console.error.mockRestore();
-  });
   it('Should exist', () => {
     expect(Radio).toMatchSnapshot();
   });
@@ -50,16 +42,6 @@ Default
 Default
         </p>
       </Radio>);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-  it('Should show a error on the console because name props its required', () => {
-    const component = renderer.create(
-      <Radio value="TEST" checked disabled>
-        <p>
-Default
-        </p>
-      </Radio>);
-    expect(global.console.error).toBeCalled();
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

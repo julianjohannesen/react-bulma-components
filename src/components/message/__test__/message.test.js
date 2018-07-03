@@ -55,9 +55,7 @@ Custom
         {props.children}
       </p>
     );
-    Custom.propTypes = {
-      children: PropTypes.element.isRequired,
-    };
+    Custom.propTypes = { children: PropTypes.node.isRequired };
 
     const component = renderer.create(
       <Message renderAs={Custom}>
