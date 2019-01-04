@@ -10,17 +10,17 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 
 ### V3
 
-- Currently V3 its in beta. You can try it wirh `npm install react-bulma-components@next`.
-- There may be some bugs in this version please be sure to **test** it before using it on you project
+- Currently V3 is in beta. You can try it with `npm install react-bulma-components@next`.
+- There may be some bugs in this version. Please be sure to **test** it before using it on your project.
 
 ### V2 Documentation
 
-- If you are using v2 please see the Readme on [Here](https://couds.github.io/react-bulma-components/)
+- If you are using v2 please see the [Readme](https://couds.github.io/react-bulma-components/)
 
 ### BREAKING CHANGES V2 -> V3:
 
-- Now the alias needed to override Bulma variables (and/or use the directly the sass files) it `_variables.sass` instead of `~_variables.sass`, See Advanced setup below.
-- Please check the components you are using still works as expected, We add Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
+- Now the alias needed to override Bulma variables (and/or use sass files directly) is `_variables.sass` instead of `~_variables.sass`. See Advanced setup below.
+- Please check the components you are using still work as expected. We added Ref forwarding https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
 
 ### To Install
 
@@ -30,12 +30,12 @@ React components for [Bulma](http://bulma.io/) (v0.7.1) UI compatible with most 
 
 Currently there are two ways to use this library depending of your needs and configuration:
 
-- **Basic**: You import from the main module the components and include the css your self (No treeshaking by default, no bulma variables override)
-- **Advanced**: You import from the lib folder the components you need, this is the more versatile way but need some extra configuration (See [Advanced Setup](https://github.com/couds/react-bulma-components#advanced) section)
+- **Basic**: You import the components from the main module and include the css your self (No treeshaking by default, no bulma variables override)
+- **Advanced**: You import the components you need from the lib folder. This is the more versatile way, but needs some extra configuration (See [Advanced Setup](https://github.com/couds/react-bulma-components#advanced) section)
 
 #### Basic
 
-This configuration will allow you to start fast but with one drawback, by default will include all components (no treeshaking) and will use the default variables of Bulma.
+This configuration will allow you to start fast but with one drawback, by default it will include all components (no treeshaking) and will use the default Bulma variables.
 
 ```javascript
 import React from 'react';
@@ -49,10 +49,10 @@ export default () => (
 
 #### Advanced
 
-This configuration its recomended it you answer yes to one of the following questions:
+This configuration its recommended if you answer yes to one of the following questions:
 
-- I'm worried about the final size of my bundle?
-- I need to override the default Bulma variables?
+- Are you worried about the final size of my bundle?
+- Do you need to override the default Bulma variables?
 
 ```javascript
 import React from 'react';
@@ -63,13 +63,13 @@ export default () => (
 )
 ```
 
-Before you use this configuration you need to setup a `_variables.sass` file somewhere in your project (I recomment inside your `src` folder). This file will alow you to override bulma variables if need it like:
+Before you use this configuration you need to setup a `_variables.sass` file somewhere in your project (I recommend inside your `src` folder). This file will allow you to override bulma variables if necessary, like:
 
 ```
 $primary: #c3c3c3
 ```
 
-**Note** Use this file only for variables, do not include any css rule in this files because that will cause to that rule to be duplicated for every time you include a component from this library.
+**Note** Use this file only for variables. Do not include any css rules in this file, because that will cause the rule to be duplicated every time you include a component from this library.
 
 Depending of your project configuration you will need to setup your framework to use this file:
 
@@ -91,9 +91,9 @@ Inside the resolve directive setup your webpack to use modules from the folder w
 
 #### CRA
 
-Install node-sass to enable the sass compiles on your project.
+Install node-sass to enable Sass.
 
-After that update your scripts in the `package.json` to add the folder to your path
+Then update your scripts in `package.json` to add the folder to your path
 ```
 "scripts": {
   "start": "NODE_PATH=./src react-scripts start",
@@ -107,7 +107,7 @@ where `./src` its the folder where you put your `_variables.sass`
 
 #### Gatsby
 
-Follow the [instructions](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) to enable Sass compiling in project, and configure the sass plugin to include the path where you put the `_variables.sass` file, for example:
+Follow the [instructions](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) to enable Sass compiling, and configure the Sass plugin to include the path where you put the `_variables.sass` file, for example:
 
 ```javascript
 plugins: [
@@ -124,9 +124,9 @@ plugins: [
 
 #### Next.js
 
-Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable sass in the project. You will also need to configure the transpiled modules plugin `next-plugin-transpile-modules` so install it `npm i --save-dev next-plugin-transpile-modules`.
+Follow the [instructions](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) to enable Sass. You will also need to configure the transpiled modules plugin `next-plugin-transpile-modules`, so install it with `npm i --save-dev next-plugin-transpile-modules`.
 
-Now on your `next.config.js` configure yout sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
+Now on your `next.config.js` configure your Sass to include the directory where you put your `_variables.sass` file and add `react-bulma-components` to the transpiled modules
 
 ```javascript
 const withSass = require('@zeit/next-sass')
@@ -144,9 +144,9 @@ module.exports = withTM(withSass({
 
 You can find the documentation in https://couds.github.io/react-bulma-components
 
-Each component imports their own sass file. Thus, you can reduce your css total file size by only including the styles that you will use. To enable this, please configure your [Webpack](https://webpack.github.io/) to handle sass files. You can use the webpack.config.js on the root folder of this repository.
+Each component imports their own Sass file. Thus, you can reduce your css total file size by only including the styles that you will use. To enable this, please configure your [Webpack](https://webpack.github.io/) to handle sass files. You can use the webpack.config.js on the root folder of this repository.
 
-Some components may vary the api/naming convention with the Bulma Docs. Please refer to each stories in the Storybook to see how each component could be used (you can find the source code of the story on the tab `Story` on the bottom panel
+For some components, the api/naming convention may vary from the Bulma Docs. Please refer to each story in the Storybook to see how each component could be used (you can find the source code of the story on the tab `Story` on the bottom panel).
 
 The following components were ported:
 
